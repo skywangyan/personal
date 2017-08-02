@@ -26,7 +26,7 @@
 }
 
 
-\title{C++ notes}
+\title{BB Training Notes}
 \date{2017}
 
 \begin{document}
@@ -111,16 +111,52 @@ Basic input and output
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newday{July 26th 2017}
+Bash
 
-\begin{projects}
-  \begin{description}
-  \item [Alice Smith] joint work on software on low power platforms\footnote{names and ideas changd to protect the innocent}
-  \item [Bob Jones] joint work on novel concurrency primitives
-  \end{description}
-\end{projects}
+command + \& -> run in background \newline
+shell define vaiable without \$, access variable with \$.
+quote stop match regular expression but does not stop variable access.
 
+Vim\newline
+x - delete char\newline
+5x - delete 5 chars\newline
+dd - delete a whole line \newline
+5dd - delete 5 lines \newline
+dw - delete a word \newline
+5dw - delete 5 words \newline
+shift + char - capital char (also valid in Emacs) \newline
+cw - change word \newline
+. - repeat last command \newline
+cc - change the entire line \newline
+\$ end of line, \^ beginning of line \newline
+:+10 :-5 move cursor according to line number \newline
+
+C++\newline
+main can't be put in a namespace or the compiler won't find it because it won't be main in the symbol table but with some extra prefix related with the namespace.\newline
+a() + b() + c(), specific evaluation sequence is not defined before C++11.\newline
+reference much be initialized, pointer could point to null.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newday{July 27th 2017}
 
+\textbf{GIT}
+\begin{enumerate}
+\item The stage is used for telling Git what to care about in future commands.
+\item To remove files from stage : git reset  HEAD [path] e.g.\ git reset HEAD readme.md
+\item Commit creat a snapshot in history of all files
+\item Supplies a unique hash used for referring to the moment in histroy
+\item To keep files but remove Git tracking : git rm --cached [file]
+  \begin{itemize}
+  \item --cached tells Git to remove tracking on this file, but keep local file.
+  \item git rm [file] remove local
+  \end{itemize}
+\item A fork creates a remote repository by cloning
+\item Use pull request to merge changes in fork back to its parent repository.
+\item Note that each commit hash actually reference a complete snapshot of the repository. The snapshot contains a commit hash for EVERY FILE.
+\item remote remote branch git push origin :{branch-name} \footnote {Pay attention to the space positon}
+\item Fast forward merg happen only if history has not diverged
+  \item merge order, merge master on current branch, checkout to master and merge local feature branch, push master, delete local branch
+\end{enumerate}
 \begin{maybe}
   \begin{itemize}
   \item Reimplement the ideas from the paper \textit{Getting Reference Counting Back in the Ring} \citep{Shahriyar+12}
