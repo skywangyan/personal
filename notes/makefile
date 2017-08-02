@@ -5,7 +5,7 @@ best: $(WHAT).tex
 	bibtex $(WHAT)
 	pdflatex $(WHAT).tex
 	pdflatex $(WHAT).tex
-	open -a Skim.app $(WHAT).pdf
+	evince $(WHAT).pdf
 
 fast: $(WHAT).tex
 	pdflatex $(WHAT).tex
