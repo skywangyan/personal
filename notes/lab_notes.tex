@@ -9,7 +9,7 @@
 
 \usepackage{lab_notes}
 \usepackage{listings}
-
+\usepackage{color}
 \usepackage{hyperref}
 \hypersetup{
   pdffitwindow=false,            % window fit to page
@@ -165,15 +165,44 @@ reference much be initialized, pointer could point to null.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newday{10 June 2014}
-
-The (very fast) OCaml to Javascript compiler described in \citep{VouillonBalat13}\footnote{\url{http://ocsigen.org/js_of_ocaml/}} takes the unusual approach of compiling OCaml \textit{bytecode} to Javascript, rather than performing a source-to-source translation.
-
-\hrulefill
+\newday{August 3rd 2017}
+class object data member initialization sequence is exactly as they are declared in the private domain.
+rvalue could not be referenced because they can't be addressed;
+\begin{lstlisting}[language=c++]
+this[0].name equals this->name
+\end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newday{August 7th 2017}
+pass pointer essentially pass a pointer value to local variable in a function, in this way, the pointer value points to the same place. But the pointer variable's address is different.
 
-\newday{9 June 2014}
+const is a contract made with compiler -- compiler level restriction.
+\begin{lstlisting}[language=C++]
+  const int DAYS = 7;//compiler knows days is integer
+  #define DAYS 7 // compiler doesn't see the DAYS, string replaced by proprecessor.
+\end{lstlisting}
+\textcolor{red}figure out reference assignment such as:
+\begin{lstlisting}[language=C++]
+  int& t = foo();
+\end{lstlisting}
+Class constructor use explicit when it only has one argument - to avoid implicit conversion.
+
+always use getter and setter in design.
+
+Static member is also a class member. It could access class data members.
+
+\textcolor{red}{figure out return mechanism}
+\textcolor{blue}{cin stream will stop every time face a blank}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newday{August 9 2017}
+when function returns the return value is passed to EAX register, the local variable is gone.
+EAX is used for assignment.
+\begin{lstlisting}[language=C++]
+  int a = foo();
+\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newday{8 June 2014}
 
 Poor benchmark results. Ideas for improvement are listed in the issue tracker in the repository.
 
