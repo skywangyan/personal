@@ -202,14 +202,17 @@ EAX is used for assignment.
   int a = foo();
 \end{lstlisting}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newday{August 16 2017}
-
-\includegraphics[scale=0.65]{benchmark}
-
-\hrulefill
+\newday{August 10 2017}
+\includegraphics[scale=0.65]{memory.jpg}
+arr[5] is a syntax suger for *(arr+5).\newline
+There is no simple corresponding way to allocate a multi-dimensional array dynamically, you have to allocate an array of pointers, and then allocate each row\'s worth of elements individually.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newday{August 16 2017}
+\includegraphics[scale=0.65]{benchmark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \newday{6 June 2014}
 Discuss that for <<, the main purpose is the side effect (i.e., inserting the data into the stream). And yes, it yields a stream as a value that is needed for chaining.
