@@ -256,5 +256,13 @@ If makefile srcdirs specified, excludesrcfile key word doesn't take effect.
 %\newpage
 \bibliographystyle{plain}
 \bibliography{lab_notes}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newday{September 17, 2017}
+systemctl stop mariadb.service
+systemctl start mariadb.service
+必须以root用户登录myriadb才可以创建用户：
+mysql -u root -p
+CDtnsl17
+CREATE USER 'YanMac'@'%' IDENTIFIED BY 'passw0rd';
+grant all PRIVILEGES on *.* to YanMac@'%' identified by 'passw0rd'; //给YanMac用户在任何dining上用‘passw0rd’登录的权限；
 \end{document}
