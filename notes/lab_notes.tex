@@ -1,4 +1,3 @@
-
 %%% Laboratory	 Notes
 %%% Template by Mikhail Klassen, April 2013
 %%% Contributions from Sarah Mount, May 2014
@@ -250,19 +249,56 @@ Google mock a abstract class:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newday{September 7, 2017}
 In Bloomberg:
-Google\_Mock need to include IS\_GMOCK\_MAIN=yes
-makefile srcdirs need to specify the very folders, you can't assume it look for source files recursively.
+Google\_Mock need to include IS\_GMOCK\_MAIN=yes\\
+makefile srcdirs need to specify the very folders, you can't assume it look for source files recursively.\\
 If makefile srcdirs specified, excludesrcfile key word doesn't take effect.
 %\newpage
-\bibliographystyle{plain}
-\bibliography{lab_notes}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newday{September 17, 2017}
-systemctl stop mariadb.service
-systemctl start mariadb.service
-必须以root用户登录myriadb才可以创建用户：
-mysql -u root -p
-CDtnsl17
-CREATE USER 'YanMac'@'%' IDENTIFIED BY 'passw0rd';
-grant all PRIVILEGES on *.* to YanMac@'%' identified by 'passw0rd'; //给YanMac用户在任何dining上用‘passw0rd’登录的权限；
+systemctl stop mariadb.service\\
+systemctl start mariadb.service\\
+%必须以root用户登录myriadb才可以创建用户：\\
+mysql -u root -p\\
+CDtnsl17\\
+CREATE USER 'YanMac'@'%' IDENTIFIED BY 'passw0rd';\\
+grant all PRIVILEGES on *.* to YanMac@'%' identified by 'passw0rd'; %//给YanMac用户在任何dining上用‘passw0rd’登录的权限；\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+on mac, mysql.server start
+
+\newday{September 23, 2017}
+\begin{lstlisting}[language=c++]
+  namespace std {
+    class Node {
+      public:
+      Node(string name):d_name(name), d_children() {}
+      string& name(){ return d_name;}
+      const string& getName() const {return d_name;}
+      set<Node>& children() { return d_children;}
+      private:
+      string d_name;
+      set<Node> d_children;
+    };
+
+    inline bool operator<(const Node& lhs, const Node& rhs) {
+      return lhs.getName() < rhs.getName();
+    }
+
+  }//close std
+
+\end{lstlisting}
+In this, why inline could solve the duplication error??
+
+\textcolor{red}{How to use unordered\_set with customized hash??}
+\newday{September 27, 2017}
+\begin{itemize}
+\item C++ complier makes default constructor, default assignment operator, default copy constructor by necessity. Only if there are such operations in the code, correspondent component would be generated. Declared these as private to forbid using them.\\
+\item If you want to use [] to access element in C++ map, the value type should support default constructor.
+\end{itemize}
+
+\newday{September 28, 2017}
+If there is a virtual function in class, you need to make the destructor virtual.
+Each class maintains a vtable about different virtual function.
+\bibliographystyle{plain}
+\bibliography{lab_notes}
 \end{document}
