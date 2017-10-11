@@ -314,6 +314,14 @@ open mysql:mysql.server start
 \newday{October 10, 2017}
 ecs git sync fail because ssh-agent not set up.\\
 
+\begin{lstlisting}
+Start the ssh-agent in the background.
+eval "$(ssh-agent -s)"
+Agent pid 59566
+ssh-add private key file
+push/pull
+\end{lstlisting}
+
 
 
 \bibliographystyle{plain}
