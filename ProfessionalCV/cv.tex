@@ -1,0 +1,144 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Yan \textsc{Wang}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+%% \section{Personal Data}
+
+\begin{tabular}{rl}
+    %\textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
+    %\textsc{Address:}   & CV Inn 19, 20301, Milano, Italy \\
+    \textsc{Phone:}     & 814-880-8820\\
+    \textsc{email:}     & \href{mailto:jinshiweikai@gmail.com}{jinshiweikai@gmail.com}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+  \emph{Current} & Software Enginner at \textbf{BloombergLP}, New York\\
+  \multicolumn{2}{c}{} \\
+  \textsc{May-Aug 2016}&\emph{Summer Intern} at \textbf{Palo Alto Networks}, Santa Clara\\
+  &\footnotesize{Design and deploy a global signature distribution system based on AWS services (EC2, ELC, SNS, SQS) using python script.}\\
+  &\footnotesize{"Moon" - Build a monitoring system to set up varies kinds of alerts for different services in production environment based on Django.}\\
+  \multicolumn{2}{c}{}\\
+  \textsc{Apr 2014-Jul 2015} & Software Engineer at \textbf{Alibaba Cloud}, Hangzhou \\
+  %&\emph{Commodities Structured Trading}\\
+  &\footnotesize{"God-Eye" - Build and maintain an internal continuous integration web system from scratch to allocate computing resource, trigger tests automatically, generate code quality report and monitor project progress.}\\
+  &\footnotesize{"Sparrow" - Design and build a web system to navigate pre-release tests in a comprehensive cluster which dentically simulates online environment to solve module dependency bugs}\\
+  &\footnotesize{"Tianchi" - Manage and regulate all the computers of our group with a web portal which could be used to conduct all kinds of operations towards servers
+}\\
+  %% \multicolumn{2}{c}{} \\
+  %% \textsc{Summer 2007} & Summer Intern at \textsc{Lehman Brothers}, \emph{Capital Markets}\\
+  %% &\footnotesize{Received pre-placed offer from the Exotics Trading Desk as a result of very positive review. Rated ``\emph{truly distinctive}'' for Analytical Skills and Teamwork.}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}
+ \textsc{July} 2017 & Master of Science in \textsc{Information Science and Technology},\\&\textbf{Pennsylvania State University}, State College\\
+%& 110/110 \small\emph{summa cum laude} | Major: Quantitative Finance\\
+& Thesis: ``Obfuscation with Turing Machine'' | \small Advisor: Prof. Dinghao Wu \\
+%&\normalsize \textsc{Gpa}: 28.61/30\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}\\&\\
+ \textsc{July} 2013& Master of Engineering in \textsc{Electronic Science and Engineering}\\
+&\normalsize\textbf{Nanjing University}, Nanjing\\
+ & Thesis: ``Research on Routing Protocols in Ad hoc Wireless Network'' | \\
+ &\small Advisor: Prof. Ziqiang Wang \\
+
+\textsc{July} 2010& Bachelor of Science in  \textbf{Electronic Science and Engineering}\\
+&\normalsize\textbf{Nanjing University}, Nanjing\\
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Publications}
+\begin{itemize}
+\item Yan Wang* , Shuai Wang*, Pei Wang*, and Dinghao Wu. ``Turing Obfuscation'', In Proceedings of the 13th EAI International Conference on Security and Privacy in Communication Networks (SecureComm 2017), Niagara Falls, Canada, October 22-25, 2017.\\
+\item Wang, Yan, et al. ``AD-AODV: A improved routing protocol based on network mobility and route hops.'' Wireless Communications, Networking and Mobile Computing (WiCOM), 2012 8th International Conference on. IEEE, 2012.
+\end{itemize}
+
+
+%Section: Languages
+\section{Skills}
+\begin{itemize}
+\item LLVM, Unix, Compiler, Software Security
+\item Python, C++, C, JS
+\item Django, Cakephp, Mysql, Bootstrap
+\item Spark, AWS, MFC
+\end{itemize}
+
+
+%\newpage
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}

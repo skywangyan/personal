@@ -1,4 +1,3 @@
-
 %%% Laboratory	 Notes
 %%% Template by Mikhail Klassen, April 2013
 %%% Contributions from Sarah Mount, May 2014
@@ -250,11 +249,99 @@ Google mock a abstract class:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newday{September 7, 2017}
 In Bloomberg:
-Google\_Mock need to include IS\_GMOCK\_MAIN=yes
-makefile srcdirs need to specify the very folders, you can't assume it look for source files recursively.
+Google\_Mock need to include IS\_GMOCK\_MAIN=yes\\
+makefile srcdirs need to specify the very folders, you can't assume it look for source files recursively.\\
 If makefile srcdirs specified, excludesrcfile key word doesn't take effect.
 %\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newday{September 17, 2017}
+systemctl stop mariadb.service\\
+systemctl start mariadb.service\\
+%必须以root用户登录myriadb才可以创建用户：\\
+mysql -u root -p\\
+CDtnsl17\\
+CREATE USER 'YanMac'@'%' IDENTIFIED BY 'passw0rd';\\
+grant all PRIVILEGES on *.* to YanMac@'%' identified by 'passw0rd'; %//给YanMac用户在任何dining上用‘passw0rd’登录的权限；\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+on mac, mysql.server start
+
+\newday{September 23, 2017}
+\begin{lstlisting}[language=c++]
+  namespace std {
+    class Node {
+      public:
+      Node(string name):d_name(name), d_children() {}
+      string& name(){ return d_name;}
+      const string& getName() const {return d_name;}
+      set<Node>& children() { return d_children;}
+      private:
+      string d_name;
+      set<Node> d_children;
+    };
+
+    inline bool operator<(const Node& lhs, const Node& rhs) {
+      return lhs.getName() < rhs.getName();
+    }
+
+  }//close std
+
+\end{lstlisting}
+In this, why inline could solve the duplication error??
+
+\textcolor{red}{How to use unordered\_set with customized hash??}
+\newday{September 27, 2017}
+\begin{itemize}
+\item C++ complier makes default constructor, default assignment operator, default copy constructor by necessity. Only if there are such operations in the code, correspondent component would be generated. Declared these as private to forbid using them.\\
+\item If you want to use [] to access element in C++ map, the value type should support default constructor.
+\end{itemize}
+
+\newday{September 28, 2017}
+If there is a virtual function in class, you need to make the destructor virtual.
+Each class maintains a vtable about different virtual function.
+
+\newday{October 4, 2017}
+\begin{lstlisting}[]
+  latexmk -pdf compile latex file.
+  xelatex cv.tex compile with xelatex mode.
+\end{lstlisting}
+
+\newday{October 8, 2017}
+\begin{lstlisting}
+open mysql:mysql.server start
+\end{lstlisting}
+
+\newday{October 10, 2017}
+ecs git sync fail because ssh-agent not set up.\\
+
+\begin{lstlisting}
+Start the ssh-agent in the background.
+eval "$(ssh-agent -s)"
+Agent pid 59566
+ssh-add private key file
+push/pull
+\end{lstlisting}
+
+\newday {October 12, 2017}
+\begin{itemize}
+\item In python, parameters are passed by reference.
+\item dictionary elements could be poped by key
+\item , character after print means next print output keep on the same line print a, b
+\item object is the mother of all classes in Python. class classname(object)
+\item use is to compare whether variables' identity which means whether they refer to the same object, use == to compare whether their values are equal.
+\item two demensional array can\'t be initialized by * like  multi = [[0] * 5] * 3
+  should be initialized via  [[0 for col in range(5)] for row in range(3)]
+\item python would load lib of xxx.pyc first, if you wanna load from another place, remove this file
+\item python 2 don\'t allow children function modify upper level local variable, in Python 3, nonlocal keyword is induced to solve this problem.
+  \item Queue.Queue and collections.deque serve different purposes. Queue.Queue is intended for allowing different threads to communicate using queued messages/data, whereas collections.deque is simply intended as a datastructure. That\'s why Queue.Queue has methods likeput\_nowait(), get\_nowait(), and join(), whereas collections.deque doesn\'t. Queue.Queueisn\'t intended to be used as a collection, which is why it lacks the likes of the in operator.
+It boils down to this: if you have multiple threads and you want them to be able to communicate without the need for locks, you\'re looking for Queue.Queue; if you just want a queue or a double-ended queue as a datastructure, use collections.deque.
+Finally, accessing and manipulating the internal deque of a Queue.Queue is playing with fire - you really don't want to be doing that.
+\end{itemize}
+
+\newday {10/15/2017}
+
+
+
 \bibliographystyle{plain}
 \bibliography{lab_notes}
-
 \end{document}
