@@ -322,6 +322,24 @@ ssh-add private key file
 push/pull
 \end{lstlisting}
 
+\newday {October 12, 2017}
+\begin{itemize}
+\item In python, parameters are passed by reference.
+\item dictionary elements could be poped by key
+\item , character after print means next print output keep on the same line print a, b
+\item object is the mother of all classes in Python. class classname(object)
+\item use is to compare whether variables' identity which means whether they refer to the same object, use == to compare whether their values are equal.
+\item two demensional array can\'t be initialized by * like  multi = [[0] * 5] * 3
+  should be initialized via  [[0 for col in range(5)] for row in range(3)]
+\item python would load lib of xxx.pyc first, if you wanna load from another place, remove this file
+\item python 2 don\'t allow children function modify upper level local variable, in Python 3, nonlocal keyword is induced to solve this problem.
+  \item Queue.Queue and collections.deque serve different purposes. Queue.Queue is intended for allowing different threads to communicate using queued messages/data, whereas collections.deque is simply intended as a datastructure. That\'s why Queue.Queue has methods likeput\_nowait(), get\_nowait(), and join(), whereas collections.deque doesn\'t. Queue.Queueisn\'t intended to be used as a collection, which is why it lacks the likes of the in operator.
+It boils down to this: if you have multiple threads and you want them to be able to communicate without the need for locks, you\'re looking for Queue.Queue; if you just want a queue or a double-ended queue as a datastructure, use collections.deque.
+Finally, accessing and manipulating the internal deque of a Queue.Queue is playing with fire - you really don't want to be doing that.
+\end{itemize}
+
+\newday {10/15/2017}
+
 
 
 \bibliographystyle{plain}
