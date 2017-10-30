@@ -26,7 +26,7 @@
 }
 
 
-\title{BB Training Notes}
+\title{Tech Notes}
 \date{2017}
 
 \begin{document}
@@ -338,8 +338,38 @@ It boils down to this: if you have multiple threads and you want them to be able
 Finally, accessing and manipulating the internal deque of a Queue.Queue is playing with fire - you really don't want to be doing that.
 \end{itemize}
 
-\newday {10/15/2017}
+\newday{10/29/2017}
+In c++, if you wanna define a in class const variable. Generally you could do it in 2 ways:
+\begin{lstlisting}[language=c++]
+class X {
+	static const int c1 = 7;
+	enum { c2 = 19 };
 
+	char v1[c1];
+	char v2[c2];
+
+	// ...
+};
+
+class Y {
+  public:
+    Y():i1(2) {}
+  private:
+    const int i1;
+};
+initialize const variable in constructor;
+\end{lstlisting}
+A class is typically declared in a header file and a header file is typically included into many translation units. However, to avoid complicated linker rules, C++ requires that every object has a unique definition. That rule would be broken if C++ allowed in-class definition of entities that needed to be stored in memory as objects.\\
+\textbf{Why are only static const integral types \& enums allowed In-class Initialization?}
+
+The answer is hidden in Bjarne\'s quote read it closely,
+"C++ requires that every object has a unique definition. That rule would be broken if C++ allowed in-class definition of entities that needed to be stored in memory as objects."
+
+Note that only static const integers can be treated as compile time constants. The compiler knows that the integer value will not change anytime and hence it can apply its own magic and apply optimizations, the compiler simply inlines such class members i.e, they are not stored in memory anymore, As the need of being stored in memory is removed, it gives such variables the exception to rule mentioned by Bjarne.
+
+It is noteworthy to note here that even if static const integral values can have In-Class Initialization, taking address of such variables is not allowed. One can take the address of a static member if (and only if) it has an out-of-class definition.This further validates the reasoning above.
+
+enums are allowed this because values of an enumerated type can be used where ints are expected
 
 
 \bibliographystyle{plain}
