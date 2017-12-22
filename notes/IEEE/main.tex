@@ -66,7 +66,8 @@
 \documentclass[journal]{IEEEtran}
 \usepackage{blindtext}
 \usepackage{graphicx}
-
+\usepackage{listings}%for codes
+\usepackage{color}%for color fonts
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
@@ -457,8 +458,7 @@
 
 
 \begin{abstract}
-%\boldmath
-\blindtext[1]
+\boldmath This is Mr. Yan Wang\'s comprehensive notebook to record his carreer in United States.
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -469,7 +469,7 @@
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-IEEEtran, journal, \LaTeX, paper, template.
+Notes of Yan
 \end{IEEEkeywords}
 
 
@@ -487,7 +487,7 @@ IEEEtran, journal, \LaTeX, paper, template.
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-
+\input{notebook1}
 
 \section{Introduction}
 \blindtext
