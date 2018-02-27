@@ -44,3 +44,17 @@ find /path -type f -print | xargs rm
 $\bullet$   {\color{red}IntelliJ} will offer the option to create new class in the new menu, only if you right click within the part of your project structure, which is marked as Sources root or Test sources root.  right click the src/main directory in the project structure view and select Mark directory As/Sources Root. That should fix it.\bigskip
 \newline
 $\bullet$ {\color{green}Zookeeper Introduction} \url{https://www.ibm.com/developerworks/cn/data/library/bd-zookeeper/index.html}
+\newline$\bullet$ context in Mapper Class is the medium to contact with hdfs or other compents in Hadoop.
+\newline$\bullet$ mapper output type should be indentical with reducer input type.
+
+\# \textbf{Java}
+Set is a parent interface of all set classes like TreeSet, LinkedHashSet etc. HashSet is a class implementing Set interface. Set interface is the same.
+
+\# \textbf{Maven}
+\begin{itemize}
+\item Build elements handle plugins
+\item maven-jar-plugin need to specify manifest in which main class is claimed.
+\item maven-compiler-plugin is needed to configured to use java vaersion 7 or higher to get rid of Maven Compilation Error: (use -source 7 or higher to enable diamond operator)
+
+
+\end{itemize}
