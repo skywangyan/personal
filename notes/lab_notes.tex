@@ -34,7 +34,7 @@
 
 \newday{23 July 2017}
 Chaper 1
-\begin{projects}
+\begin{note}
   Symbol Table
   \begin{itemize}
   \item it is a data structure maintained by compiler
@@ -55,7 +55,7 @@ Chaper 1
     extern int a;//declaration
     int b = 1;//definition and declaration
   \end{lstlisting}
-\end{projects}
+\end{note}
 
 Constants
 \begin{enumerate}
@@ -396,8 +396,18 @@ Distributed graph processing
 \newday{3/28/2018}
 \begin{itemize}
 \item Different types occupy the same space room in all kinds of computer archetecture, this is why java is more portable than most of other languages.
-
 \end{itemize}
+%%%%%%%%%%%%%%%%5
+\newday{4/1/2018}
+\begin{note}
+
+  \begin{itemize}
+    \item \textbf{Reducer output file numebr} It has nothing to do with the number of physical nodes in the cluster.The rule is: one part-r-* file for one Reducer. The number of Reducers is set by job.setNumReduceTasks();If there are no Reducers in your job - then one part-m-* file for one Mapper. There is one Mapper for one InputSplit (usually - unless you use custom InputFormat implementation, there is one InputSplit for one HDFS block of your input data).
+
+  \end{itemize}
+\end{note}
+
+
 
 \bibliographystyle{plain}
 \bibliography{lab_notes}
