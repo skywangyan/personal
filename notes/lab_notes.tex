@@ -35,7 +35,7 @@
 
 \newday{23 July 2017}
 Chaper 1
-\begin{projects}
+\begin{note}
   Symbol Table
   \begin{itemize}
   \item it is a data structure maintained by compiler
@@ -56,7 +56,7 @@ Chaper 1
     extern int a;//declaration
     int b = 1;//definition and declaration
   \end{lstlisting}
-\end{projects}
+\end{note}
 
 Constants
 \begin{enumerate}
@@ -375,8 +375,42 @@ enums are allowed this because values of an enumerated type can be used where in
 \newday{10/30/2017}
 list files with size \textcolor{red}{ls -lh}
 
+
 \newday{11/09/2017}
 \includegraphics[width=\textwidth]{pics/maven}
+
+\newday{03/01/2018}
+In Java, String[] has length attribute, a string object has a length() getter;
+
+\newday{03/11/2018}
+Distributed graph processing
+\begin{itemize}
+\item graphlab
+\item pregel
+\end{itemize}
+
+\newday{3/14/2018}
+
+\newday{3/25/2018}
+\begin{itemize}
+\item Sharding is a type of database partitioning that separates very large databases into smaller, faster, more easily managed parts called data shards.
+\item MariaDB is a community-developed fork of MySQL which intended to remain free under GNL GPL.
+\end{itemize}
+
+\newday{3/28/2018}
+\begin{itemize}
+\item Different types occupy the same space room in all kinds of computer archetecture, this is why java is more portable than most of other languages.
+\end{itemize}
+%%%%%%%%%%%%%%%%5
+\newday{4/1/2018}
+\begin{note}
+
+  \begin{itemize}
+    \item \textbf{Reducer output file numebr} It has nothing to do with the number of physical nodes in the cluster.The rule is: one part-r-* file for one Reducer. The number of Reducers is set by job.setNumReduceTasks();If there are no Reducers in your job - then one part-m-* file for one Mapper. There is one Mapper for one InputSplit (usually - unless you use custom InputFormat implementation, there is one InputSplit for one HDFS block of your input data).
+
+  \end{itemize}
+\end{note}
+
 
 \newday{12/11/2017}
 \chapter{run Jenkins}

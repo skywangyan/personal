@@ -30,7 +30,11 @@
 \usepackage{url}
 \usepackage{wrapfig}
 
-% Define a custom color set.
+%%%%%%%%%%%%%Font
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% rmdefault a custom color set.
 \usepackage{xcolor}
 \definecolor{tenPercentGrey}{gray}{0.9}
 
@@ -132,8 +136,8 @@
 \rfoot{\textsc{\thepage}}
 
 %%%%%%%%%%% NEW ENVIRONMENTS %%%%%%%%%%
-\newenvironment{projects}%
-	{\section*{Projects \& Collaborations}}%
+\newenvironment{note}%
+	%{\section*{note}}%
 	{\vspace{2mm}\hrule\hspace{\stretch{1}}}
 
 \newenvironment{maybe}%
