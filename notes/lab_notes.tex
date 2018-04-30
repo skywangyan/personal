@@ -379,6 +379,15 @@ list files with size \textcolor{red}{ls -lh}
 \newday{11/09/2017}
 \includegraphics[width=\textwidth]{pics/maven}
 
+\newday{12/11/2017}
+\chapter{run Jenkins}
+\begin{enumerate}
+\item{Download Jenkins.}
+\item Open up a terminal in the download directory.
+\item Run java -jar jenkins.war --httpPort=8080.
+\item Browse to http://localhost:8080.
+\item Follow the instructions to complete the installation.
+
 \newday{03/01/2018}
 In Java, String[] has length attribute, a string object has a length() getter;
 
@@ -411,16 +420,22 @@ Distributed graph processing
   \end{itemize}
 \end{note}
 
-
-\newday{12/11/2017}
-\chapter{run Jenkins}
-\begin{enumerate}
-\item{Download Jenkins.}
-\item Open up a terminal in the download directory.
-\item Run java -jar jenkins.war --httpPort=8080.
-\item Browse to http://localhost:8080.
-\item Follow the instructions to complete the installation.
 \end{enumerate}
+
+\newday{04/29/2018}
+\begin{note}
+  \begin{itemize}
+  \item Mapreduce framework consists of a single master JObTracker and one slave taskTracker per cluster node.
+  \item Hadoop streaming interface is different than in Java. Instead of receiving reduce(k, Iterator[v]), reducer actually receives one line per value, including the key.
+    \begin{itemize}
+    \item reduce('TRUE', Iterator(1,1,1))
+    \item  TRUE, 1
+    \item TRUR, 1
+    \item TRUR, 1
+    \end{itemize}
+   \item Phoenix upsert insert if not exists in the table else update the record based on the key. So won't have duplicate rows.
+  \end{itemize}
+\end{note}
 
 \bibliographystyle{plain}
 \bibliography{lab_notes}
