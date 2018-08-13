@@ -55,6 +55,21 @@ Set is a parent interface of all set classes like TreeSet, LinkedHashSet etc. Ha
 \item Build elements handle plugins
 \item maven-jar-plugin need to specify manifest in which main class is claimed.
 \item maven-compiler-plugin is needed to configured to use java vaersion 7 or higher to get rid of Maven Compilation Error: (use -source 7 or higher to enable diamond operator)
-
-
+\end{itemize}
+\# \textbf{leetCode}
+\begin{itemize}
+\item 737\_sentence\_similarity2, use union find to check if two words are connected, if so they are similar.
+\item 734\_sentence\_similarity, use set to store counter part of a word.
+\item 189\_rotate\_array, reverse array 3 times
+\item 683\_k\_empty\_slot, figure out bloom day for each unit, loop through this bloom array once to find a subarray both ends are the smallest two and in the middle there are k elments.
+\item 482\_license\_key\_formatting, easy, replace slash char then do the math.
+\item 681\_next\_closest\_time, convert time to number of minutes, use permutation api to check todays smallest time, if there is not, use the least number in current time 4 times as next day time.
+\item 686\_repeated\_string\_match, do the math, check whether the least lenth of repeated string could accommodate the target, if not add 1 and 2, if still can't return -1
+\item 766\_Teoplitz\_matrix.py, check from elements of the first row and first column, iterate the diagnal line of the matrix to check if they are equal.
+\item 403\_frog\_jump.py, use dp to store redundant computations for previous steps, each element in dp dict is current unit and a set of previous step coming to this unit, initially every value
+  of the dict is a empty set. iterate through the dict and check if the last one is an empty set.
+\item 399\_evaluate\_division.py, construct graph for each node, the product of edges from start node to end node is the outcome, if there is no such path, return -1
+\item 447\_number\_of\_boomerangs, for each point, constuct a dict mapping distance and the number of points fit this distance, if number > 2, add permutation of such number to final result.
+\item 212\_word\_search2.py, use a trie to do pruning in each dfs.
+\item 266\_palindrome\_permutation, construct a repeat time dict, do the math.
 \end{itemize}
